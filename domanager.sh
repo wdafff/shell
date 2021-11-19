@@ -17,7 +17,7 @@ if type doctl >/dev/null 2>&1; then
     doctl account get
     echo ""
 else 
-    echo '请先安装DOCTL' 
+    echo -e "${red}请先安装DOCTL!!!${black}'"
 fi
 
 #查询所有VM
