@@ -2,17 +2,24 @@ red="\033[31m"
 black="\033[0m"
 
 #====================================================#
-#	System Request:Ubuntu 18.04+/Centos 7+			 #
-#	Author:	wdafff								     #
-#	Dscription: do cli shell manager				 #
-#	Version: 1.0									 #
-#	email:wdafff@gmail.com						     #
+#	System Request:Ubuntu 18.04+/Centos 7+	     #
+#	Author:	wdafff				     #
+#	Dscription: do cli shell manager	     #
+#	Version: 1.0				     #
+#	email: wdafff@gmail.com			     #
 #====================================================#
 
-echo "当前登录用户:"
-echo ""
-doctl account get
-echo ""
+echo '欢迎使用DOCTL命令行管理' 
+
+if type doctl >/dev/null 2>&1; then 
+    echo "当前用户:"
+    echo ""
+    doctl account get
+    echo ""
+else 
+    echo '请先安装DOCTL' 
+fi
+
 #查询所有VM
 do-vm-list(){
     doctl compute droplet ls --format ID,Name,PublicIPv4,Memory,VCPUs,Disk,Region,Status
