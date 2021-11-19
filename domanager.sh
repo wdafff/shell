@@ -9,7 +9,9 @@ black="\033[0m"
 #	email: wdafff@gmail.com			     #
 #====================================================#
 
+echo "-----------------------"
 echo '欢迎使用DOCTL命令行管理' 
+echo "-----------------------"
 
 if type doctl >/dev/null 2>&1; then 
     echo "当前用户:"
@@ -17,7 +19,7 @@ if type doctl >/dev/null 2>&1; then
     doctl account get
     echo ""
 else 
-    echo -e "${red}请先安装DOCTL!!!${black}'"
+    echo -e "${red}请先安装DOCTL!!!${black}"
 fi
 
 #查询所有VM
